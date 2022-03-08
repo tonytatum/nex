@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link href="./public/assets/css/main.93ce77cacdc46ca947b7.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./public/assets/js/staking.js"></script>
+<script src="./public/assets/js/main.3ffc7ae408d14c080cc0.js"></script>
+<script>
+  function test(){
+	var inputF=document.getElementById('amount').value;
+console.log(inputF);
+    var month =document.getElementById('beeone').value;
+console.log(month);
+    var coin=document.getElementById('beetwo').value;
+console.log(coin);
+	var outputField=0;
+	var profitPercent = 0.35;
+ if (month == "12"){
+  profitPercent= (0.18 *inputF);
+  outputField= parseInt(inputF, 10) + profitPercent;
+console.log(parseInt(inputF, 10) + profitPercent);
+console.log(outputField);
+document.getElementById('duration').innerHTML= month;
+  document.getElementById('out').innerHTML= "$"+outputField;
+  }else
+ if (month == "1"){
+  profitPercent= (0.1 *inputF);
+  outputField= parseInt(inputF, 10) + profitPercent;
+console.log(outputField);
+document.getElementById('duration').innerHTML= month;
+  document.getElementById('out').innerHTML= "$"+outputField;
+  } if (month == "24"){
+  profitPercent= (0.35 *inputF);
+  outputField= parseInt(inputF, 10) + profitPercent;
+console.log(outputField);
+document.getElementById('duration').innerHTML= month;
+  document.getElementById('out').innerHTML= "$"+outputField;
+  }else
+ if (month == "36"){
+  profitPercent= (0.40 *inputF);
+  outputField= parseInt(inputF, 10) + profitPercent;
+console.log(outputField);
+document.getElementById('duration').innerHTML= month;
+  document.getElementById('out').innerHTML= "$"+outputField;
+  };
+}
+  </script>
+</head>
+<body>
+
+<div class="container">
+  <!-- Button to Open the Modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Calculate
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content" style="
+    border: white;
+    height: 600px;
+    width: 700px;
+">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Calculate Value of Stakes & Earning </h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="sm:flex sm:p-24 md:p-64 sm:border-1 border-color-100 rounded-md3" ob-earncalculator="min: 1, max: 36, initial: 24">
+<div class="sm:w-2/5">
+<div>
+<label class="block mb-4 text-14 md:text-16 font-medium leading-120 text-color-500">
+Crypto Asset </label>
+<div class="relative flex items-center justify-between px-16 py-12 md:py-10 border-1 border-gray-100 rounded-4">
+<div class="flex items-center">
+<img class="w-24 h-24 md:w-32 md:h-32" src="/assets/img/bitcoin.svg" alt="btc logo" width="32" height="32" ob-earncalculator-currencylogo="{&quot;avax&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/avax\/19c256fe3c-1643292068\/avax.svg&quot;,&quot;axs&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/axs\/e195ac66aa-1643292068\/axs.svg&quot;,&quot;btc&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/btc\/2aea2080e6-1636360718\/bitcoin.svg&quot;,&quot;bch&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/bch\/d065dfadb3-1645706247\/bitcoin-cash.svg&quot;,&quot;bnb&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/bnb\/4e6e74e774-1645706246\/bnb.svg&quot;,&quot;ada&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/ada\/a89d7074ab-1645706246\/ada.svg&quot;,&quot;link&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/link\/e22d2c306e-1645706247\/link.svg&quot;,&quot;atom&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/atom\/e0a5bc70cb-1645706246\/atom.svg&quot;,&quot;dai&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/dai\/9f3e30ebb2-1645706247\/cc-sc-dai.svg&quot;,&quot;doge&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/doge\/7812a1084a-1645706247\/dogecoin.svg&quot;,&quot;eos&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/eos\/7ba530bae8-1645706247\/eos.svg&quot;,&quot;eth&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/eth\/c46c2bb0d1-1636360718\/ethereum.svg&quot;,&quot;eurx&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/eurx\/0d165ea826-1645706247\/eur-flag.svg&quot;,&quot;ftm&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/ftm\/5047e1e1f5-1643292068\/ftm.svg&quot;,&quot;gbpx&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/gbpx\/2d2271e7cc-1645706247\/gbp-flag.svg&quot;,&quot;ksm&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/ksm\/e6f6a3663d-1645706246\/ksm.svg&quot;,&quot;ltc&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/ltc\/0e26739441-1645706247\/litecoin.svg&quot;,&quot;luna&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/luna\/ba71e9135a-1643292067\/luna.svg&quot;,&quot;nexo&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/nexo\/36fd47cb12-1643292068\/nexo.svg&quot;,&quot;usdp&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/usdp\/e2b0969720-1645706247\/usdp.svg&quot;,&quot;paxg&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/paxg\/e2f134c236-1645706247\/paxg.svg&quot;,&quot;dot&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/dot\/fb6cf8b5cc-1643292068\/dot.svg&quot;,&quot;matic&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/matic\/096a71273a-1643292067\/matic.svg&quot;,&quot;xrp&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/xrp\/c753af5b17-1645706246\/xrp.svg&quot;,&quot;sol&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/sol\/b57be7e2bd-1645706246\/sol.svg&quot;,&quot;xlm&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/xlm\/a72fb2bdce-1645706247\/stellar.svg&quot;,&quot;ust&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/ust\/ceffc883f8-1645706247\/ust.svg&quot;,&quot;usdt&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/usdt\/f7f51f8d1a-1643292068\/cc-sc-usdt.svg&quot;,&quot;trx&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/trx\/4b0225035d-1645706247\/tron.svg&quot;,&quot;tusd&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/tusd\/361d9084e9-1645706247\/cc-sc-tusd.svg&quot;,&quot;usdc&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/usdc\/4b51f94e34-1643292068\/cc-sc-usdc.svg&quot;,&quot;usdx&quot;:&quot;https:\/\/nexo.io\/media\/pages\/currencies\/usdx\/2ea96a1b4d-1645706247\/usd-flag.svg&quot;}">
+<span class="ml-8 text-18 md:text-20 font-medium leading-100 text-color-800" ob-earncalculator-currencytitle="">
+Bitcoin </span>
+</div>
+<span class=" text-14 text-color-300" aria-hidden="true">
+<i class="o-icon o-icon--fa-solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg></i> </span>
+<select id="beetwo" onchange="test()" class="absolute top-0 left-0 w-full h-full pl-48 opacity-0" id="beetwo" ob-earncalculator-currency="">
+<option value="avax" data-apy="10">
+Avalanche </option>
+<option value="axs" data-apy="34">
+Axie Infinity </option>
+<option value="btc" data-apy="6" selected="">
+Bitcoin </option>
+<option value="bch" data-apy="6">
+Bitcoin Cash </option>
+<option value="bnb" data-apy="6">
+BNB </option>
+<option value="ada" data-apy="6">
+Cardano </option>
+<option value="link" data-apy="6">
+Chainlink </option>
+<option value="atom" data-apy="9">
+Cosmos </option>
+<option value="dai" data-apy="10">
+DAI </option>
+<option value="doge" data-apy="1">
+Dogecoin </option>
+<option value="eos" data-apy="6">
+EOS </option>
+<option value="eth" data-apy="6">
+Ethereum </option>
+<option value="eurx" data-apy="10">
+EURx </option>
+<option value="ftm" data-apy="16">
+Fantom </option>
+<option value="gbpx" data-apy="10">
+GBPx </option>
+<option value="ksm" data-apy="10">
+Kusama </option>
+<option value="ltc" data-apy="6">
+Litecoin </option>
+<option value="luna" data-apy="11">
+Luna </option>
+<option value="nexo" data-apy="12">
+NEXO Token </option>
+<option value="usdp" data-apy="10">
+Pax Dollar </option>
+<option value="paxg" data-apy="6">
+PAX Gold </option>
+<option value="dot" data-apy="13">
+Polkadot </option>
+<option value="matic" data-apy="14">
+Polygon </option>
+<option value="xrp" data-apy="6">
+Ripple </option>
+<option value="sol" data-apy="6">
+Solana </option>
+<option value="xlm" data-apy="6">
+Stellar </option>
+<option value="ust" data-apy="18">
+TerraUSD </option>
+<option value="usdt" data-apy="10">
+Tether </option>
+<option value="trx" data-apy="6">
+Tron </option>
+<option value="tusd" data-apy="10">
+TrueUSD </option>
+<option value="usdc" data-apy="10">
+USD Coin </option>
+<option value="usdx" data-apy="10">
+USDx </option>
+</select>
+</div>
+</div>
+<div class="mt-16">
+<label class="block mb-4 text-14 md:text-16 font-medium leading-120 text-color-500">
+Top Up Amount </label>
+<input id="amount" oninput="test()" class="w-full px-16 py-12 text-16 md:text-20 font-medium leading-125 md:leading-140 text-color-800 border-1 border-gray-100 rounded-4" value=10000 type="number" inputmode="numeric" >
+<div class="mt-32 md:mt-24 flex">
+<span class="c-button__icon ml-8 md:ml-12 text-16 md:text-18">
+<i class="o-icon o-icon--fa-solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg></i> </span>
+</a>
+</div>
+</div>
+<p class="mt-16 sm:mt-24 text-14 md:text-16 leading-140 text-gray-400">
+This calculator is for informational purposes only. Calculated yields assume that principal and interest remain in your Nexo account. </p>
+</div>
+<div class="the-graph relative lg:flex flex-col justify-between sm:w-3/5 mt-24 sm:mt-0 sm:ml-24 md:ml-48">
+<h3 class="absolute top-0 left-0 ml-24 sm:ml-32">
+<span class="text-16 md:text-20 font-medium leading-120 text-gray-800">
+In <span id="duration" >24</span>
+months you will have </span>
+<span class="flex mt-6 text-42 md:text-64 leading-100 font-serif text-gray-800">
+<span id="out"  style="font-size: 1em; margin-top: 163px;">$11,256.34</span>
+</span>
+</h3>
+
+<div class="flex justify-between mt-4">
+<select id="beeone" onchange="test()">
+<option  class="c-button-toggle" value="1">1 month</option>
+<option  class="c-button-toggle" value="12">12 months</option>
+<option  selected="selected" class="c-button-toggle is-active" value="24"="value: 24">24 months</option>
+<option  class="c-button-toggle" value="36">36 months</option>
+</select>
+</div>
+</div>
+</div>
+
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+</body>
+</html>
