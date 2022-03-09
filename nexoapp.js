@@ -143,40 +143,7 @@ app.get("/borrow",function(req,res){
   res.render("borrow")
 });
 
-app.post("/borrowto",function(req,res){
-  // var inputField = req.body.amount
-  // console.log(req.body);
-  // var chosenCoin= req.body.coinPick;
-  // var chosenCurrency=req.body.currencyPick ;
-  // const url ="https://api.coingecko.com/api/v3/simple/price?ids="+chosenCoin+"&vs_currencies="+chosenCurrency
-  //
-  //
-  // https.get(url, function(response){
-  //
-  //   response.on("data", function (data){
-  //     // if (req.body.coinPick == "bitcoin"){
-  //     const apiData = JSON.parse(data)
-  //     console.log(apiData.bitcoin);
-  //     let infoData= apiData;
 
-      // var collateral = (35/100) * inputField;
-      //    var outputField= collateral/infoData.bitcoin.usd;
-      //   console.log(outputField);
-
-      // var collateral = (35/100) * inputField;
-      // var outputField= collateral/infoData.bitcoin.usd;
-      // console.log(outputField);
-  //     // };
-  //   });
-  // });
-
-});
-app.get("/borrowto.html", function( req, res) {
-
-  res.render(outpufield)
-});
-
-// Showing home page
 app.get("/about-us", function (req, res) {
   res.render('about-us')
 });

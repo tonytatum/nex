@@ -5,7 +5,7 @@
   "main": "nexoapp.js",
   "scripts": {
     "start": "node nexoapp.js"
-},
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
