@@ -49,7 +49,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 //=====================
 // Showing home page
 app.get("/", function (req, res) {
-  res.render('nexoo')
+  res.render('Nexoo')
 });
 
 // Showing secret page
