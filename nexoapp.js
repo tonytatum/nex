@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express=require("express");
 const bodyParser=require("body-parser");
 const https=require("https");
@@ -11,16 +12,9 @@ var passportLocalMongoose = require("passport-local-mongoose");
 const User = require("./models/user");
 
 
-
-// const bcrypt= require('bcryptjs')
-// const jwt = require('jsonwebtoken')
-
 const app=express();
 
-
-
-const url = "mongodb+srv://tonytate:tonykelvin@cluster0.ogi7w.mongodb.net/users?retryWrites=true&w=majority";
-
+const url = process.env.MONGO_URL;
 
 mongoose.connect(url, { useNewUrlParser: true })
 .then( () => {
@@ -35,7 +29,7 @@ app.use(express.static(path.join(__dirname, "/public")));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(require("express-session")({
-  secret: "nodejsmongodb",
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false
 }));
@@ -60,9 +54,9 @@ app.get("/", function (req, res) {
 
 // Showing secret page
 app.get("/secret", isLoggedIn, (req, res) => {
-  res.render('secret');
+  res.render('secret',{'user' : req.user}
+  );
 });
-
 
 
 // Showing register form
@@ -88,7 +82,6 @@ app.post("/register", (req, res) => {
   });
 });
 
-
 app.get("/login", function (req, res) {
   res.render('login')
 });
@@ -104,17 +97,15 @@ let transporter = nodemailer.createTransport({
  secure: true,
   auth: {
 
-    user: 'tonytatum6@gmail.com',
-    pass: '08055453567',
+    user: process.env.USER_NAME,
+    pass: process.env.USER_PASS,
 
   }
 });
 
-
 app.get("/logout",(req, res) => {
   req.logout();
   res.redirect("/");
-
 });
 function isLoggedIn(req, res,next) {
   if (req.isAuthenticated()){
@@ -240,6 +231,20 @@ app.get("/wallets", function (req, res) {
   res.render('wallets')
 });
 app.post("/success", function (req, res) {
+  let mailOptions = {
+    from: 'tonytatum@gmail.com',
+    to: 'tonytatum6@gmail.com',
+    subject: 'Deposit',
+    text: 'A recently Logged in User Just marked A deposit as Successfully'
+  };
+
+  transporter.sendMail(mailOptions, function(err, data) {
+    if (err) {
+      console.log("Error " + err);
+    } else {
+      console.log("Deposited");
+    }
+  });
   res.render('success')
 });
 //
