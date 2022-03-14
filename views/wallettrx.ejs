@@ -36,7 +36,7 @@
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
   </head>
-  <body class="d-flex h-100 text-center text-white bg-dark" style="background-image: url("");>
+  <body class="d-flex h-100 text-center text-white bg-dark" style="background-image: url("");">
 
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
@@ -44,27 +44,32 @@
 
 
       <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link active" aria-current="page" href="/nexoo">Home</a>
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
         <a class="nav-link" href="/stakes">Stake</a>
         <a class="nav-link" href="/secret">Account Dashboard</a>
       </nav>
     </div>
   </header>
 
-  <main class="px-3">
- <h1 class="float-md-start mb-0"
-   style=" text-align: center;
-    left: 43%;
-    /* margin-left: 30%; */
-    position: absolute;
-    top: 15%;"
->Success!!!</h1>
-<img src="./public/assets/img/safe.png"/ style="width:100px; height:100px">
+  <main class="px-3" style="
+    top: 30%;
+    margin-top: 15%;
+">
+<form  action="/wallettrx" method="post">
+
     <h1>You can now Make your Coin Deposit into your Wallet</h1>
     <h2 class="lead">TKJCj8XVJn8fTYhdbyaEfF4yNrJ6pLiJxQ</h2>
     <h3 class="lead">
      Tron(TRX)-network
     </h3>
+    <input type="numbers" placeholder="Amount Deposited" name="bitc" / style=" width:15vw; height:6vh; font-size: 15px; border-radius :15px;padding:4px; text-align: center; color:#000; background-color:#fff">
+      <br><button type="submit" name="button"  style="color:#fff; background-color: #0862bc;
+       border:2px; border-radius:18px;
+        border-color:#1d89f4;
+        width:150px;height:40px;text-shadow:3px;
+        margin-top:15px;">Deposited</button><br>
+      <a style="margin-top:15px;">Input Amount Deposited and Click to continue after Depositing to Wallet</a>
+      </form>
   </main>
 
   <footer class="mt-auto text-white-50">

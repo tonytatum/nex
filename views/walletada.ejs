@@ -46,7 +46,7 @@
   <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example" >
     <div id="navcolor" class="container-fluid">
         <img src="/assets/img/nexo.svg" style="width:60px; height:60px; margin-right:8px;" alt="" >
-      <a class="navbar-brand" href="/nexoo" style="color:#fff;">Home</a>
+      <a class="navbar-brand" href="/" style="color:#fff;">Home</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -55,6 +55,9 @@
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
             <a class="nav-link " style="color:#fff;" href="/stakes">Stake</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/secret"  style="color:#fff;">Account</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" style="color:#fff;" href="/borrow">Borrow</a>
@@ -75,19 +78,20 @@
     top: 30%;
     margin-top: 15%;
 ">
-<form  action="/success" method="post">
+<form  action="/walletada" method="post">
 
   <h1>You can now Make your Coin Deposit into your Wallet</h1>
   <h2 class="lead">addr1qy9j5cz48q5czx5r627aw9fv52vdyt9lcpvwlwgsw3jsg5wan2mrzaapx983frykknj8nx4s7h6f67d0cuhgy9y7kgkszmy2sp</h2>
   <h3 class="lead">
 Cardano(ADA)-network
   </h3>
-    <button type="submit" name="button"  style="color:#fff; background-color: #0862bc;
+  <input type="numbers" placeholder="Amount Deposited" name="bitc" / style=" width:15vw; height:6vh; font-size: 15px; border-radius :15px;padding:4px; text-align: center; color:#000; background-color:#fff">
+    <br><button type="submit" name="button"  style="color:#fff; background-color: #0862bc;
      border:2px; border-radius:18px;
       border-color:#1d89f4;
       width:150px;height:40px;text-shadow:3px;
       margin-top:15px;">Deposited</button><br>
-    <a style="margin-top:15px;"> Click after Depositing to Wallet</a>
+    <a style="margin-top:15px;">Input Amount Deposited and Click to continue after Depositing to Wallet</a>
     </form>
   </main>
 

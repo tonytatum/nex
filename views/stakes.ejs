@@ -12,13 +12,28 @@
   .butto{
     border-radius: 10px;
     width: 60px;
-    height: 30px;
+    height: 25px;
     color: #fff;
     border-color: #0d6efd;
     border-width: 2px;
-    background-color:transparent;
+    background-color: #0d6efd;
     margin-bottom: 18px
+    padding: 2px 2px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 2px #000;
   }
+  .butto:hover {background-color: #3e8e41}
+
+.butto:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(2px);
+}
   .nav-link{
     margin-right:40px;
   }
@@ -39,7 +54,19 @@
     background-color: #fff!important;
     border-radius: 23px;
 }
+ select{
+   color:#fff;
+   background-color: #0d6efd;
+   border-radius: 10px;
+ }
+ #stakeView{
+   color:#000;
+   background-color: #fff;
+   border-radius: 20px;
+   text-align: center;
+ }
 </style>
+
   </head>
   <body style="
     background-color: #4c93fc;
@@ -84,6 +111,9 @@
             <a class="nav-link " style="color:#519dea;" href="/stakes">Stake</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link " href="/secret"  style="color:#fff;">Account</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" style="color:#519dea;" href="/borrow">Borrow</a>
           </li>
           <li class="nav-item">
@@ -112,12 +142,21 @@
           <img  src="/assets/img/bitcoin.svg" alt="btc logo" width="32" height="32">
           <h5 class="card-title">BTC</h5>
           <p class="card-text">Annualized interest Rate.</p><span><h2> 35%</h2></span> <br>
-          <p class="card-text">Minimum Locked Amount.</p><span><h3> 0 </h3></span>
-          <button class="butto" type="button" value="10" name="button">10 Days</button>
-          <button class="butto" type="button" value="30" name="button">30 Days</button>
-          <button class="butto" type="button" value="60" name="button">60 Days</button>
-          <button class="butto" type="button" value="90" name="button">90 Days</button>
-          <a href="/walletbtc" class="btn btn-primary">Stake Now</a>
+          <p class="card-text">Minimum Locked Amount.</p><span><h3><%=user.stakebtc%></h3></span>
+    <form method="POST" action="/stakesuccess"> <input type="hidden" value="btc" name="custId"/>
+      <input id="stakeView" name="amount" type="number" placeholder="Amount to Stake" />
+      <p> Please select your prefered Staking Plan.</p>
+      <select id="select_on" name="select_on">
+        <option  value="1">Flexible Staking</option>
+        <option value="2">Locked Staking</option>
+      </select><br>
+      <div id="radio_on" style=" display:none">
+         <input type="radio" name="" value="20"/><label>20 Days</label> <br>
+          <input type="radio" name="" value="30" checked/><label>30 Days</label> <br>
+          <input type="radio" name="" value="60"/><label>60 Days</label><br>
+          </div>
+          <button type="submit" class="btn btn-primary">Stake Now</button>
+        </form>
         </div>
       </div>
     </div>
@@ -127,12 +166,21 @@
             <img alt="" height="32" src="/assets/img/ETH.svg">
             <h5 class="card-title">ETH</h5>
             <p class="card-text">Annualized interest Rate.</p><span><h2> 31%</h2></span> <br>
-            <p class="card-text">Minimum Locked Amount.</p><span><h3> 0 </h3></span>
-            <button class="butto" type="button" value="10" name="button">10 Days</button>
-            <button class="butto" type="button" value="30" name="button">30 Days</button>
-            <button class="butto" type="button" value="60" name="button">60 Days</button>
-            <button class="butto" type="button" value="90" name="button">90 Days</button>
-            <a href="/walleteth" class="btn btn-primary">Stake Now</a>
+            <p class="card-text">Minimum Locked Amount.</p><span><h3> <%=user.stakeeth%></h3></span>
+            <form method="POST" action="/stakesuccess"> <input type="hidden" value="eth" name="custId"/>
+              <input id="stakeView" name="amount" type="number" placeholder="Amount to Stake" />
+              <p> Please select your prefered Staking Plan.</p>
+              <select id="select_ona" name="select_ona">
+                <option  value="1">Flexible Staking</option>
+                <option value="a">Locked Staking</option>
+              </select><br>
+              <div id="radio_ona" style=" display:none">
+                 <input type="radio" name="" value="20"/><label>20 Days</label> <br>
+                  <input type="radio" name="" value="30" checked/><label>30 Days</label> <br>
+                  <input type="radio" name="" value="60"/><label>60 Days</label><br>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Stake Now</button>
+                </form>
           </div>
         </div>
       </div>
@@ -142,12 +190,21 @@
           <img alt="" height="32" src="/assets/img/USDT.svg">
           <h5 class="card-title">USDT</h5>
           <p class="card-text">Annualized interest Rate.</p><span><h2> 20%</h2></span> <br>
-          <p class="card-text">Minimum Locked Amount.</p><span><h3> 0 </h3></span>
-          <button class="butto" type="button" value="10" name="button">10 Days</button>
-          <button class="butto" type="button" value="30" name="button">30 Days</button>
-          <button class="butto" type="button" value="60" name="button">60 Days</button>
-          <button class="butto" type="button" value="90" name="button">90 Days</button>
-          <a href="/wallettet" class="btn btn-primary">Stake Now</a>
+          <p class="card-text">Minimum Locked Amount.</p><span><h3><%=user.staketet%></h3></span>
+          <form method="POST" action="/stakesuccess"> <input type="hidden" value="usdt" name="custId"/>
+            <input id="stakeView" name="amount" type="number" placeholder="Amount to Stake" />
+            <p> Please select your prefered Staking Plan.</p>
+            <select id="select_onb" name="select_onb">
+              <option  value="1">Flexible Staking</option>
+              <option value="b">Locked Staking</option>
+            </select><br>
+            <div id="radio_onb" style=" display:none">
+               <input type="radio" name="" value="20"/><label>20 Days</label> <br>
+                <input type="radio" name="" value="30" checked/><label>30 Days</label> <br>
+                <input type="radio" name="" value="60"/><label>60 Days</label><br>
+                </div>
+                <button type="submit" class="btn btn-primary">Stake Now</button>
+              </form>
         </div>
       </div>
     </div>
@@ -161,12 +218,21 @@
           <img alt="" height="32" src="/assets/img/ftm.svg">
           <h5 class="card-title">FTM</h5>
           <p class="card-text">Annualized interest Rate.</p><span><h2> 24%</h2></span> <br>
-          <p class="card-text">Minimum Locked Amount.</p><span><h3> 0 </h3></span>
-          <button class="butto" type="button" value="10" name="button">10 Days</button>
-          <button class="butto" type="button" value="30" name="button">30 Days</button>
-          <button class="butto" type="button" value="60" name="button">60 Days</button>
-          <button class="butto" type="button" value="90" name="button">90 Days</button>
-          <a href="/walletftm" class="btn btn-primary">Stake Now</a>
+          <p class="card-text">Minimum Locked Amount.</p><span><h3> <%=user.stakeftm%></h3></span>
+          <form method="POST" action="/stakesuccess"> <input type="hidden" value="ftm" name="custId"/>
+            <input id="stakeView" name="amount" type="number" placeholder="Amount to Stake" />
+            <p> Please select your prefered Staking Plan.</p>
+            <select id="select_onc" name="select_on">
+              <option  value="1">Flexible Staking</option>
+              <option value="c">Locked Staking</option>
+            </select><br>
+            <div id="radio_onc" style=" display:none">
+               <input type="radio" name="" value="20"/><label>20 Days</label> <br>
+                <input type="radio" name="" value="30" checked/><label>30 Days</label> <br>
+                <input type="radio" name="" value="60"/><label>60 Days</label><br>
+                </div>
+                <button type="submit" class="btn btn-primary">Stake Now</button>
+              </form>
         </div>
       </div>
     </div>
@@ -176,12 +242,21 @@
         <img alt="" height="32" src="/assets/img/LTC.svg">
         <h5 class="card-title">LTC</h5>
         <p class="card-text">Annualized interest Rate.</p><span><h2> 28%</h2></span> <br>
-        <p class="card-text">Minimum Locked Amount.</p><span><h3> 0 </h3></span>
-        <button class="butto" type="button" value="10" name="button">10 Days</button>
-        <button class="butto" type="button" value="30" name="button">30 Days</button>
-        <button class="butto" type="button" value="60" name="button">60 Days</button>
-        <button class="butto" type="button" value="90" name="button">90 Days</button>
-        <a href="/walletltc" class="btn btn-primary">Stake Now</a>
+        <p class="card-text">Minimum Locked Amount.</p><span><h3> <%=user.stakeltc%> </h3></span>
+        <form method="POST" action="/stakesuccess"> <input type="hidden" value="ltc" name="custId"/>
+          <input id="stakeView" name="amount" type="number" placeholder="Amount to Stake" />
+          <p> Please select your prefered Staking Plan.</p>
+          <select id="select_ond" name="select_on">
+            <option  value="1">Flexible Staking</option>
+            <option value="d">Locked Staking</option>
+          </select><br>
+          <div id="radio_ond" style=" display:none">
+             <input type="radio" name="" value="20"/><label>20 Days</label> <br>
+              <input type="radio" name="" value="30" checked/><label>30 Days</label> <br>
+              <input type="radio" name="" value="60"/><label>60 Days</label><br>
+              </div>
+              <button type="submit" class="btn btn-primary">Stake Now</button>
+            </form>
       </div>
     </div>
   </div>
@@ -191,12 +266,21 @@
         <img alt="" height="32" width="32" src="/assets/img/shib.svg">
         <h5 class="card-title">SHIBA </h5>
         <p class="card-text">Annualized interest Rate.</p><span><h2> 22%</h2></span> <br>
-        <p class="card-text">Minimum Locked Amount.</p><span><h3> 0 </h3></span>
-        <button class="butto" type="button" value="10" name="button">10 Days</button>
-        <button class="butto" type="button" value="30" name="button">30 Days</button>
-        <button class="butto" type="button" value="60" name="button">60 Days</button>
-        <button class="butto" type="button" value="90" name="button">90 Days</button>
-        <a href="/walletshib" class="btn btn-primary">Stake Now</a>
+        <p class="card-text">Minimum Locked Amount.</p><span><h3> <%=user.stakeshib%></h3></span>
+        <form method="POST" action="/stakesuccess"> <input type="hidden" value="shiba" name="custId"/>
+          <input id="stakeView" name="amount" type="number" placeholder="Amount to Stake" />
+          <p> Please select your prefered Staking Plan.</p>
+          <select id="select_one" name="select_on">
+            <option  value="1">Flexible Staking</option>
+            <option value="e">Locked Staking</option>
+          </select><br>
+          <div id="radio_one" style=" display:none">
+             <input type="radio" name="" value="20"/><label>20 Days</label> <br>
+              <input type="radio" name="" value="30" checked/><label>30 Days</label> <br>
+              <input type="radio" name="" value="60"/><label>60 Days</label><br>
+              </div>
+              <button type="submit" class="btn btn-primary">Stake Now</button>
+            </form>
       </div>
     </div>
   </div>
@@ -210,12 +294,21 @@ margin-bottom: 10px;
       <img alt="" height="32" width="32" src="/assets/img/algo.svg">
       <h5 class="card-title">ALGO</h5>
       <p class="card-text">Annualized interest Rate.</p><span><h2> 20%</h2></span> <br>
-      <p class="card-text">Minimum Locked Amount.</p><span><h3> 0 </h3></span>
-      <button class="butto" type="button" value="10" name="button">10 Days</button>
-      <button class="butto" type="button" value="30" name="button">30 Days</button>
-      <button class="butto" type="button" value="60" name="button">60 Days</button>
-      <button class="butto" type="button" value="90" name="button">90 Days</button>
-      <a href="/walletalgo" class="btn btn-primary">Stake Now</a>
+      <p class="card-text">Minimum Locked Amount.</p><span><h3> <%=user.stakealgo%> </h3></span>
+      <form method="POST" action="/stakesuccess"> <input type="hidden" value="algo" name="custId"/>
+        <input id="stakeView" name="amount" type="number" placeholder="Amount to Stake" />
+        <p> Please select your prefered Staking Plan.</p>
+        <select id="select_onf" name="select_on">
+          <option  value="1">Flexible Staking</option>
+          <option value="f">Locked Staking</option>
+        </select><br>
+        <div id="radio_onf" style=" display:none">
+           <input type="radio" name="" value="20"/><label>20 Days</label> <br>
+            <input type="radio" name="" value="30" checked/><label>30 Days</label> <br>
+            <input type="radio" name="" value="60"/><label>60 Days</label><br>
+            </div>
+            <button type="submit" class="btn btn-primary">Stake Now</button>
+          </form>
     </div>
   </div>
 </div>
@@ -225,12 +318,21 @@ margin-bottom: 10px;
         <img alt="" height="32" src="/assets/img/sol.svg">
         <h5 class="card-title">SOL</h5>
         <p class="card-text">Annualized interest Rate.</p><span><h2> 25%</h2></span> <br>
-        <p class="card-text">Minimum Locked Amount.</p><span><h3> 0 </h3></span>
-        <button class="butto" type="button" value="10" name="button">10 Days</button>
-        <button class="butto" type="button" value="30" name="button">30 Days</button>
-        <button class="butto" type="button" value="60" name="button">60 Days</button>
-        <button class="butto" type="button" value="90" name="button">90 Days</button>
-        <a href="/walletsol" class="btn btn-primary">Stake Now</a>
+        <p class="card-text">Minimum Locked Amount.</p><span><h3> <%=user.stakesol%> </h3></span>
+        <form method="POST" action="/stakesuccess"> <input type="hidden" value="sol" name="custId"/>
+          <input id="stakeView" name="amount" type="number" placeholder="Amount to Stake" />
+          <p> Please select your prefered Staking Plan.</p>
+          <select id="select_ong" name="select_on">
+            <option  value="1">Flexible Staking</option>
+            <option value="g">Locked Staking</option>
+          </select><br>
+          <div id="radio_ong" style=" display:none">
+             <input type="radio" name="" value="20"/><label>20 Days</label> <br>
+              <input type="radio" name="" value="30" checked/><label>30 Days</label> <br>
+              <input type="radio" name="" value="60"/><label>60 Days</label><br>
+              </div>
+              <button type="submit" class="btn btn-primary">Stake Now</button>
+            </form>
       </div>
     </div>
   </div>
@@ -240,12 +342,21 @@ margin-bottom: 10px;
       <img alt="" height="32" src="/assets/img/ada.svg">
       <h5 class="card-title">ADA</h5>
       <p class="card-text">Annualized interest Rate.</p><span><h2> 27%</h2></span> <br>
-      <p class="card-text">Minimum Locked Amount.</p><span><h3> 0 </h3></span>
-      <button class="butto" type="button" value="10" name="button">10 Days</button>
-      <button class="butto" type="button" value="30" name="button">30 Days</button>
-      <button class="butto" type="button" value="60" name="button">60 Days</button>
-      <button class="butto" type="button" value="90" name="button">90 Days</button>
-      <a href="/walletada" class="btn btn-primary">Stake Now</a>
+      <p class="card-text">Minimum Locked Amount.</p><span><h3> stakeada </h3></span>
+      <form method="POST" action="/stakesuccess"> <input type="hidden" value="ada" name="custId"/>
+        <input id="stakeView" name="amount" type="number" placeholder="Amount to Stake" />
+        <p> Please select your prefered Staking Plan.</p>
+        <select id="select_onh" name="select_on">
+          <option  value="1">Flexible Staking</option>
+          <option value="h">Locked Staking</option>
+        </select><br>
+        <div id="radio_onh" style=" display:none">
+           <input type="radio" name="" value="20"/><label>20 Days</label> <br>
+            <input type="radio" name="" value="30" checked/><label>30 Days</label> <br>
+            <input type="radio" name="" value="60"/><label>60 Days</label><br>
+            </div>
+            <button type="submit" class="btn btn-primary">Stake Now</button>
+          </form>
     </div>
   </div>
 </div>
@@ -259,12 +370,21 @@ margin-bottom: 10px;
       <img alt="" height="32" src="/assets/img/USDC.svg">
       <h5 class="card-title">USDC</h5>
       <p class="card-text">Annualized interest Rate.</p><span><h2> 20%</h2></span> <br>
-      <p class="card-text">Minimum Locked Amount.</p><span><h3> 0 </h3></span>
-      <button class="butto" type="button" value="10" name="button">10 Days</button>
-      <button class="butto" type="button" value="30" name="button">30 Days</button>
-      <button class="butto" type="button" value="60" name="button">60 Days</button>
-      <button class="butto" type="button" value="90" name="button">90 Days</button>
-      <a href="/walletusd" class="btn btn-primary">Stake Now</a>
+      <p class="card-text">Minimum Locked Amount.</p><span><h3> <%=user.stakeusd%> </h3></span>
+      <form method="POST" action="/stakesuccess"> <input type="hidden" value="usdc" name="custId"/>
+        <input id="stakeView" name="amount" type="number" placeholder="Amount to Stake" />
+        <p> Please select your prefered Staking Plan.</p>
+        <select id="select_oni" name="select_on">
+          <option  value="1">Flexible Staking</option>
+          <option value="i">Locked Staking</option>
+        </select><br>
+        <div id="radio_oni" style=" display:none">
+           <input type="radio" name="" value="20"/><label>20 Days</label> <br>
+            <input type="radio" name="" value="30" checked/><label>30 Days</label> <br>
+            <input type="radio" name="" value="60"/><label>60 Days</label><br>
+            </div>
+            <button type="submit" class="btn btn-primary">Stake Now</button>
+          </form>
     </div>
   </div>
 </div>
@@ -274,12 +394,21 @@ margin-bottom: 10px;
     <img alt="" height="32" src="/assets/img/TRX.svg">
     <h5 class="card-title">TRON</h5>
     <p class="card-text">Annualized interest Rate.</p><span><h2> 26%</h2></span> <br>
-    <p class="card-text">Minimum Locked Amount.</p><span><h3> 0 </h3></span>
-    <button class="butto" type="button" value="10" name="button">10 Days</button>
-    <button class="butto" type="button" value="30" name="button">30 Days</button>
-    <button class="butto" type="button" value="60" name="button">60 Days</button>
-    <button class="butto" type="button" value="90" name="button">90 Days</button>
-    <a href="/wallettrx" class="btn btn-primary">Stake Now</a>
+    <p class="card-text">Minimum Locked Amount.</p><span><h3> <%=user.staketrx%> </h3></span>
+    <form method="POST" action="/stakesuccess"> <input type="hidden" value="tron" name="custId"/>
+      <input id="stakeView" name="amount" type="number" placeholder="Amount to Stake" />
+      <p> Please select your prefered Staking Plan.</p>
+      <select id="select_onj" name="select_on">
+        <option  value="1">Flexible Staking</option>
+        <option value="j">Locked Staking</option>
+      </select><br>
+      <div id="radio_onj" style=" display:none">
+         <input type="radio" name="" value="20"/><label>20 Days</label> <br>
+          <input type="radio" name="" value="30" checked/><label>30 Days</label> <br>
+          <input type="radio" name="" value="60"/><label>60 Days</label><br>
+          </div>
+          <button type="submit" class="btn btn-primary">Stake Now</button>
+        </form>
   </div>
 </div>
 </div>
@@ -289,16 +418,124 @@ margin-bottom: 10px;
 <img alt="" height="32" src="/assets/img/DAI.svg">
     <h5 class="card-title">DAI</h5>
     <p class="card-text">Annualized interest Rate.</p><span><h2> 23%</h2></span> <br>
-    <p class="card-text">Minimum Locked Amount.</p><span><h3> 0 </h3></span>
-    <button class="butto" type="button" value="10" name="button">10 Days</button>
-    <button class="butto" type="button" value="30" name="button">30 Days</button>
-    <button class="butto" type="button" value="60" name="button">60 Days</button>
-    <button class="butto" type="button" value="90" name="button">90 Days</button>
-    <a href="/walletdai" class="btn btn-primary">Stake Now</a>
+    <p class="card-text">Minimum Locked Amount.</p><span><h3> <%=user.stakedai%> </h3></span>
+    <form method="POST" action="/stakesuccess"> <input type="hidden" value="dai" name="custId"/>
+      <input id="stakeView" name="amount" type="number" placeholder="Amount to Stake" />
+      <p> Please select your prefered Staking Plan.</p>
+      <select id="select_onk" name="select_on">
+        <option  value="1">Flexible Staking</option>
+        <option value="k">Locked Staking</option>
+      </select><br>
+      <div id="radio_onk" style=" display:none">
+         <input type="radio" name="" value="20"/><label>20 Days</label> <br>
+          <input type="radio" name="" value="30" checked/><label>30 Days</label> <br>
+          <input type="radio" name="" value="60"/><label>60 Days</label><br>
+          </div>
+          <button type="submit" class="btn btn-primary">Stake Now</button>
+        </form>
   </div>
 </div>
 </div>
 </div>
 </div>
+<script>
+
+document.getElementById('select_on').addEventListener('change',() => {
+  var selectedOpt = document.getElementById("select_on").value
+  if (selectedOpt === "2"){
+document.getElementById('radio_on').style.display = "block"
+}else{
+  document.getElementById('radio_on').style.display = "none"
+}
+})
+document.getElementById('select_ona').addEventListener('change',() => {
+  var selectedOpta = document.getElementById("select_ona").value
+  if (selectedOpta === "a"){
+document.getElementById('radio_ona').style.display = "block"
+}else{
+  document.getElementById('radio_ona').style.display = "none"
+}
+})
+document.getElementById('select_onb').addEventListener('change',() => {
+  var selectedOptb = document.getElementById("select_onb").value
+  if (selectedOptb === "b"){
+document.getElementById('radio_onb').style.display = "block"
+}else{
+  document.getElementById('radio_onb').style.display = "none"
+}
+});
+document.getElementById('select_onc').addEventListener('change',() => {
+  var selectedOptc = document.getElementById("select_onc").value
+  if (selectedOptc === "c"){
+document.getElementById('radio_onc').style.display = "block"
+}else{
+  document.getElementById('radio_onc').style.display = "none"
+}
+});
+document.getElementById('select_ond').addEventListener('change',() => {
+  var selectedOptd = document.getElementById("select_ond").value
+  if (selectedOptd === "d"){
+document.getElementById('radio_ond').style.display = "block"
+}else{
+  document.getElementById('radio_ond').style.display = "none"
+}
+});
+document.getElementById('select_one').addEventListener('change',() => {
+  var selectedOpte = document.getElementById("select_one").value
+  if (selectedOpte === "e"){
+document.getElementById('radio_one').style.display = "block"
+}else{
+  document.getElementById('radio_one').style.display = "none"
+}
+});
+document.getElementById('select_onf').addEventListener('change',() => {
+  var selectedOptf = document.getElementById("select_onf").value
+  if (selectedOptf === "f"){
+document.getElementById('radio_onf').style.display = "block"
+}else{
+  document.getElementById('radio_onf').style.display = "none"
+}
+});
+document.getElementById('select_ong').addEventListener('change',() => {
+  var selectedOptg = document.getElementById("select_ong").value
+  if (selectedOptg === "g"){
+document.getElementById('radio_ong').style.display = "block"
+}else{
+  document.getElementById('radio_ong').style.display = "none"
+}
+});
+document.getElementById('select_onh').addEventListener('change',() => {
+  var selectedOpth = document.getElementById("select_onh").value
+  if (selectedOpth === "h"){
+document.getElementById('radio_onh').style.display = "block"
+}else{
+  document.getElementById('radio_onh').style.display = "none"
+}
+});
+document.getElementById('select_oni').addEventListener('change',() => {
+  var selectedOpti = document.getElementById("select_oni").value
+  if (selectedOpti === "i"){
+document.getElementById('radio_oni').style.display = "block"
+}else{
+  document.getElementById('radio_oni').style.display = "none"
+}
+});
+document.getElementById('select_onj').addEventListener('change',() => {
+  var selectedOptj = document.getElementById("select_onj").value
+  if (selectedOptj === "j"){
+document.getElementById('radio_onj').style.display = "block"
+}else{
+  document.getElementById('radio_onj').style.display = "none"
+}
+});
+document.getElementById('select_onk').addEventListener('change',() => {
+  var selectedOptk = document.getElementById("select_onk").value
+  if (selectedOptk === "k"){
+document.getElementById('radio_onk').style.display = "block"
+}else{
+  document.getElementById('radio_onk').style.display = "none"
+}
+})
+</script>
   </body>
 </html>
