@@ -150,21 +150,21 @@ app.get("/logout",(req, res) => {
 function isLoggedIn(req, res,next) {
   if (req.isAuthenticated()){
     //
-    // console.log(req.user.username)
-    // let mailOptions = {
-    //   from: 'tonytatum@gmail.com',
-    //   to: 'tonytatum6@gmail.com',
-    //   subject: 'NexoDefi',
-    //   text: 'User '+ req.user.username +' just logged in'
-    // };
+    console.log(req.user.username)
+    let mailOptions = {
+      from: 'tonytatum@gmail.com',
+      to: 'tonytatum6@gmail.com',
+      subject: 'NexoDefi',
+      text: 'User '+ req.user.username +' just logged in'
+    };
 
-    // transporter.sendMail(mailOptions, function(err, data) {
-    //   if (err) {
-    //     console.log("Error " + err);
-    //   } else {
-    //     console.log("Email sent successfully");
-    //   }
-    // });
+    transporter.sendMail(mailOptions, function(err, data) {
+      if (err) {
+        console.log("Error " + err);
+      } else {
+        console.log("Email sent successfully");
+      }
+    });
  return next();
   }
   res.redirect("/login");
