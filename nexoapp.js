@@ -195,7 +195,7 @@ User.findByIdAndUpdate({_id},{"walletbitc": req.body.bitc},{new:true},
     if (err){
         console.log(err)
     }else{
-      res.render("/success")
+       res.render("success")
     }
   });
 })
@@ -212,13 +212,13 @@ User.findByIdAndUpdate({_id},{"walleteth": req.body.eth},{new:true},
     }else{
       console.log("complete")
     }
-    res.render("/success")
+     res.render("success")
   });
 })
 app.get("/walletltc", isLoggedIn, (req, res) => {
   res.render('walletltc')
 });
-app.post("/walletbtc", isLoggedIn, (req, res) => {
+app.post("/walletltc", isLoggedIn, (req, res) => {
    var _id = req.user.id;
    console.log(req.body.bitc +" "+ req.user.walletbitc)
 User.findByIdAndUpdate({_id},{"walletbitc": req.body.bitc},{new:true},
@@ -226,64 +226,64 @@ User.findByIdAndUpdate({_id},{"walletbitc": req.body.bitc},{new:true},
     if (err){
         console.log(err)
     }else{
-      res.render("/success")
+       res.render("success")
     }
   });
 })
-app.post("/walletbtc", isLoggedIn, (req, res) => {
-   var _id = req.user.id;
-   console.log(req.body.bitc +" "+ req.user.walletbitc)
-User.findByIdAndUpdate({_id},{"walletbitc": req.body.bitc},{new:true},
-  function(err,result){
-    if (err){
-        console.log(err)
-    }else{
-      res.render("/success")
-    }
-  });
-})
+// app.post("/walletbtc", isLoggedIn, (req, res) => {
+//    var _id = req.user.id;
+//    console.log(req.body.bitc +" "+ req.user.walletbitc)
+// User.findByIdAndUpdate({_id},{"walletbitc": req.body.bitc},{new:true},
+//   function(err,result){
+//     if (err){
+//         console.log(err)
+//     }else{
+//        res.render("success")
+//     }
+//   });
+// })
 app.get("/walletbnb", isLoggedIn, (req, res) => {
   res.render('walletbnb')
 });
-app.post("/walletbtc", isLoggedIn, (req, res) => {
+app.post("/walletbnb", isLoggedIn, (req, res) => {
    var _id = req.user.id;
-   console.log(req.body.bitc +" "+ req.user.walletbitc)
-User.findByIdAndUpdate({_id},{"walletbitc": req.body.bitc},{new:true},
+   console.log(req.body.bnb +" "+ req.user.walletbnb)
+User.findByIdAndUpdate({_id},{"walletbnb": req.body.bnb},{new:true},
   function(err,result){
     if (err){
         console.log(err)
     }else{
-      res.render("/success")
+       res.render("success")
     }
   });
 })
 app.get("/walletalgo", isLoggedIn, (req, res) => {
   res.render('walletalgo')
 });
-app.post("/walletbtc", isLoggedIn, (req, res) => {
+app.post("/walletalgo", isLoggedIn, (req, res) => {
    var _id = req.user.id;
-   console.log(req.body.bitc +" "+ req.user.walletbitc)
-User.findByIdAndUpdate({_id},{"walletbitc": req.body.bitc},{new:true},
+   console.log(req.body.algo +" "+ req.user.walletalgo)
+User.findByIdAndUpdate({_id},{"walletalgo": req.body.algo},{new:true},
   function(err,result){
     if (err){
         console.log(err)
     }else{
-      res.render("/success")
+       res.render("success")
     }
   });
 })
 app.get("/walletsol", isLoggedIn, (req, res) => {
   res.render('walletsol')
 });
-app.post("/walletbtc", isLoggedIn, (req, res) => {
+app.post("/walletsol", isLoggedIn, (req, res) => {
    var _id = req.user.id;
-   console.log(req.body.bitc +" "+ req.user.walletbitc)
-User.findByIdAndUpdate({_id},{"walletbitc": req.body.bitc},{new:true},
+   console.log(req.body.sol +" "+ req.user.walletsol)
+User.findByIdAndUpdate({_id},{"walletsol": req.body.sol},{new:true},
   function(err,result){
     if (err){
         console.log(err)
     }else{
-      res.render("/success")
+       res.render("success")
     }
   });
 })
@@ -292,113 +292,113 @@ app.get("/wallettet", isLoggedIn, (req, res) => {
 });
 app.post("/walletbtc", isLoggedIn, (req, res) => {
    var _id = req.user.id;
-   console.log(req.body.bitc +" "+ req.user.walletbitc)
-User.findByIdAndUpdate({_id},{"walletbitc": req.body.bitc},{new:true},
+   console.log(req.body.tet +" "+ req.user.wallettet)
+User.findByIdAndUpdate({_id},{"wallettet": req.body.tet},{new:true},
   function(err,result){
     if (err){
         console.log(err)
     }else{
-      res.render("/success")
+       res.render("success")
     }
   });
 })
 app.get("/wallettrx", isLoggedIn, (req, res) => {
   res.render('wallettrx')
 });
-app.post("/walletbtc", isLoggedIn, (req, res) => {
+app.post("/wallettrx", isLoggedIn, (req, res) => {
    var _id = req.user.id;
-   console.log(req.body.bitc +" "+ req.user.walletbitc)
-User.findByIdAndUpdate({_id},{"walletbitc": req.body.bitc},{new:true},
+   console.log(req.body.trx +" "+ req.user.wallettrx)
+User.findByIdAndUpdate({_id},{"walletbitc": req.body.trx},{new:true},
   function(err,result){
     if (err){
         console.log(err)
     }else{
-      res.render("/success")
+       res.render("success")
     }
   });
 })
 app.get("/walletftm", isLoggedIn, (req, res) => {
   res.render('walletftm')
 });
-app.post("/walletbtc", isLoggedIn, (req, res) => {
+app.post("/walletftm", isLoggedIn, (req, res) => {
    var _id = req.user.id;
-   console.log(req.body.bitc +" "+ req.user.walletbitc)
-User.findByIdAndUpdate({_id},{"walletbitc": req.body.bitc},{new:true},
+   console.log(req.body.ftm +" "+ req.user.ftm)
+User.findByIdAndUpdate({_id},{"walletftm": req.body.ftm},{new:true},
   function(err,result){
     if (err){
         console.log(err)
     }else{
-      res.render("/success")
+       res.render("success")
     }
   });
 })
 app.get("/walletshib", isLoggedIn, (req, res) => {
   res.render('walletshib')
 });
-app.post("/walletbtc", isLoggedIn, (req, res) => {
+app.post("/walletshib", isLoggedIn, (req, res) => {
    var _id = req.user.id;
-   console.log(req.body.bitc +" "+ req.user.walletbitc)
-User.findByIdAndUpdate({_id},{"walletbitc": req.body.bitc},{new:true},
+   console.log(req.body.shib +" "+ req.user.walletshib)
+User.findByIdAndUpdate({_id},{"walletshib": req.body.shib},{new:true},
   function(err,result){
     if (err){
         console.log(err)
     }else{
-      res.render("/success")
+       res.render("success")
     }
   });
 })
 app.get("/walletada", isLoggedIn, (req, res) => {
   res.render('walletada')
 });
-app.post("/walletbtc", isLoggedIn, (req, res) => {
+app.post("/walletada", isLoggedIn, (req, res) => {
    var _id = req.user.id;
-   console.log(req.body.bitc +" "+ req.user.walletbitc)
-User.findByIdAndUpdate({_id},{"walletbitc": req.body.bitc},{new:true},
+   console.log(req.body.ada +" "+ req.user.walletada)
+User.findByIdAndUpdate({_id},{"walletada": req.body.ada},{new:true},
   function(err,result){
     if (err){
         console.log(err)
     }else{
-      res.render("/success")
+       res.render("success")
     }
   });
 })
 app.get("/walletusd", isLoggedIn, (req, res) => {
   res.render('walletusd')
 });
-app.post("/walletbtc", isLoggedIn, (req, res) => {
+app.post("/walletusd", isLoggedIn, (req, res) => {
    var _id = req.user.id;
-   console.log(req.body.bitc +" "+ req.user.walletbitc)
-User.findByIdAndUpdate({_id},{"walletbitc": req.body.bitc},{new:true},
+   console.log(req.body.usd +" "+ req.user.walletusd)
+User.findByIdAndUpdate({_id},{"walletusd": req.body.usd},{new:true},
   function(err,result){
     if (err){
         console.log(err)
     }else{
-      res.render("/success")
+       res.render("success")
     }
   });
-})
+});
 app.get("/walletdai", isLoggedIn, (req, res) => {
   res.render('walletdai')
 });
-app.post("/walletbtc", isLoggedIn, (req, res) => {
+app.post("/walletdai", isLoggedIn, (req, res) => {
    var _id = req.user.id;
-   console.log(req.body.bitc +" "+ req.user.walletbitc)
-User.findByIdAndUpdate({_id},{"walletbitc": req.body.bitc},{new:true},
+   console.log(req.body.dai +" "+ req.user.walletdai)
+User.findByIdAndUpdate({_id},{"walletdai": req.body.dai},{new:true},
   function(err,result){
     if (err){
         console.log(err)
     }else{
-      res.render("/success")
+       res.render("success")
     }
   });
 })
 app.get("/walletdot", isLoggedIn, (req, res) => {
   res.render('walletdot')
 });
-app.post("/walletbtc", isLoggedIn, (req, res) => {
+app.post("/walletdot", isLoggedIn, (req, res) => {
    var _id = req.user.id;
-   console.log(req.body.bitc +" "+ req.user.walletbitc)
-User.findByIdAndUpdate({_id},{"walletbitc": req.body.bitc},{new:true},
+   console.log(req.body.dot +" "+ req.user.walletdot)
+User.findByIdAndUpdate({_id},{"walletdot": req.body.dot},{new:true},
   function(err,result){
     if (err){
         console.log(err)
@@ -406,6 +406,7 @@ User.findByIdAndUpdate({_id},{"walletbitc": req.body.bitc},{new:true},
       res.send("Your Deposit has been posted, please return to Account Dashboard")
     }
   });
+ res.render("success")
 })
 app.post("/stakes", isLoggedIn, (req, res) => {
   var wallets = req.body.ftm;
@@ -447,7 +448,7 @@ app.post("/nft-lend", function (req, res) {
       console.log("Email sent successfully");
     }
   });
-  res.redirect('/walletnft')
+  res.redirect('walletnft')
 });
 // Showing home page
 app.get("/wallets", function (req, res) {
@@ -486,6 +487,7 @@ transporter.sendMail(mailOptions, function(err, data) {
     console.log("Deposited");
   }
 });
+res.render("stakesuccess")
 })
 //
 var port = process.env.PORT || 3000;
