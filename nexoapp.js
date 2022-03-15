@@ -403,7 +403,7 @@ User.findByIdAndUpdate({_id},{"walletbitc": req.body.bitc},{new:true},
     if (err){
         console.log(err)
     }else{
-      res.render("/success")
+      res.send("Your Deposit has been posted, please return to Account Dashboard")
     }
   });
 })
@@ -468,7 +468,7 @@ app.post("/success",isLoggedIn, function (req, res) {
       console.log("Deposited");
     }
   });
-  res.render('success')
+  res.send("Your Deposit has been posted, please return to Account Dashboard")
 });
 app.post("/stakesuccess",isLoggedIn, function (req, res) {
 console.log(req.body)
